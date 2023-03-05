@@ -21,7 +21,7 @@ if upload_file is not None:
     rgb_im.save('tmp.jpg')
     
     # Load Model
-    model = tf.keras.models.load_model('bp_model_pass1')
+    model = tf.keras.models.load_model('my_model.h5')
         
     # Prepare image
     img = tf.keras.utils.load_img(

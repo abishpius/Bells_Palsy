@@ -20,6 +20,9 @@ if upload_file is not None:
     rgb_im = im.convert('RGB')
     rgb_im.save('tmp.jpg')
     
+    # Class Names
+    class_names = ['Bells_Palsy', 'Normal']
+    
     # Load Model
     model = tf.keras.models.load_model('my_model.h5')
         
@@ -35,5 +38,5 @@ if upload_file is not None:
     score = tf.nn.softmax(preds[0])
     
     st.subheader(
-        "Model Predicts: {} with a {:.2f} percent confidence. Actual is {}".format(class_names[np.argmax(score)], 100 * np.max(score), actual)
+        "Model Predicts: {} with a {:.2f} percent confidence.".format(class_names[np.argmax(score)], 100 * np.max(score))
   )
